@@ -1,0 +1,9 @@
+{
+  "staticSite": {
+    "buildCommand": "",
+    "publishPath": "/",
+    "routes": [
+      { "type": "static", "path": "/(.*)", "file": "/index.html" }
+    ]
+  }
+}
