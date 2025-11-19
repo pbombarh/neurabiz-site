@@ -1,129 +1,595 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>NeuraBiz - IA para Pymes</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle fill='%23009999' cx='16' cy='16' r='16'/%3E%3Ctext x='16' y='21' font-size='14' text-anchor='middle' fill='white' font-family='system-ui,sans-serif'%3EN%3C/text%3E%3C/svg%3E"
-    />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-  </head>
+  <title>NeuraBiz · IA aplicada para Pymes</title>
+  <meta name="description" content="Menos planillas. Más ventas. IA lista para tu pyme en 7 días. Chatbots 24/7, tableros financieros diarios y automatización operativa sin dolor." />
 
-  <body>
-    <header class="nb-header">
-      <div class="nb-container nb-header-inner">
-        <div class="nb-logo">
-          <span class="nb-logo-mark">N</span>
-          <span class="nb-logo-text">NeuraBiz</span>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind custom config inline -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            nb_bg: "#0F172A",
+            nb_card: "#1E2538",
+            nb_primary: "#00B3B3",
+            nb_primary_hover: "#009999",
+            nb_text_primary: "#F8FAFC",
+            nb_text_dim: "#94A3B8",
+            nb_border: "#1E293B",
+          },
+          boxShadow: {
+            card: "0 20px 40px -8px rgba(0,0,0,.6)",
+            cta: "0 20px 40px -4px rgba(0, 179, 179, .4)",
+          },
+          borderRadius: {
+            xl2: "1rem",
+            xl3: "1.5rem",
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      background-color: #0F172A;
+      color: #F8FAFC;
+    }
+  </style>
+</head>
+<body class="bg-nb_bg text-nb_text_primary antialiased">
+
+  <!-- Header NeuraBiz -->
+  <header class="w-full px-6 md:px-10 py-4 flex items-center justify-between border-b border-nb_border/60 bg-nb_bg/90 backdrop-blur-sm sticky top-0 z-50">
+    <div class="text-lg md:text-xl font-semibold tracking-tight">
+      <span class="text-nb_primary">Neura</span>Biz
+    </div>
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      <a href="#agenda" class="hover:text-nb_primary transition">
+        Agenda tu Diagnóstico Gratis
+      </a>
+      <a
+        href="https://wa.me/56966683980?text=Hola%2C%20vengo%20desde%20tu%20web"
+        class="hover:text-nb_primary transition"
+      >
+        WhatsApp directo
+      </a>
+    </nav>
+    <a href="#agenda"
+       class="hidden md:inline-flex items-center px-4 py-2 rounded-xl2 bg-nb_primary text-nb_bg text-sm font-semibold shadow-cta hover:bg-nb_primary_hover transition">
+      Agenda ahora
+    </a>
+  </header>
+
+  <!-- Barra fija en mobile con CTA -->
+  <div class="fixed bottom-0 left-0 right-0 z-40 bg-nb_card/90 backdrop-blur-sm border-t border-nb_border p-4 flex flex-col gap-2 md:hidden">
+    <a href="#agenda" class="w-full text-center py-3 rounded-xl3 font-semibold text-nb_bg bg-nb_primary shadow-cta hover:bg-nb_primary_hover transition">
+      Agenda tu Diagnóstico Gratis
+    </a>
+    <a
+      href="https://wa.me/56966683980?text=Quiero%20saber%20c%C3%B3mo%20la%20IA%20puede%20ayudar%20mi%20pyme"
+      class="w-full text-center py-3 rounded-xl3 font-medium border border-nb_primary text-nb_primary hover:bg-nb_primary/10 transition"
+    >
+      Hablar por WhatsApp
+    </a>
+  </div>
+
+  <!-- HERO -->
+  <header class="relative overflow-hidden scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-6 pt-6 pb-16 md:pt-10 md:pb-24 lg:flex lg:items-center lg:gap-16">
+      
+      <!-- Texto -->
+      <div class="flex-1 max-w-2xl">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-nb_text_primary">
+          Menos planillas. Más ventas.<br class="hidden sm:block"/>
+          IA lista para tu pyme en <span class="text-nb_primary">7 días.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-nb_text_dim mt-6 max-w-xl leading-relaxed">
+          Chatbots que responden clientes 24/7, tableros financieros diarios y automatizaciones operativas.
+          Tú sigues vendiendo; nosotros dejamos todo andando.
+        </p>
+
+        <!-- Bullets de impacto -->
+        <ul class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+          <li class="flex items-start gap-3">
+            <span class="text-nb_primary text-xl">✓</span>
+            <span class="text-nb_text_primary/90">
+              Más cotizaciones respondidas fuera de horario
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-nb_primary text-xl">✓</span>
+            <span class="text-nb_text_primary/90">
+              2+ horas administrativas ahorradas por día
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-nb_primary text-xl">✓</span>
+            <span class="text-nb_text_primary/90">
+              Caja y margen visibles a diario
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-nb_primary text-xl">✓</span>
+            <span class="text-nb_text_primary/90">
+              Sin contratar equipo extra
+            </span>
+          </li>
+        </ul>
+
+        <!-- CTAs desktop -->
+        <div class="hidden md:flex flex-wrap items-center gap-4 mt-10">
+          <a href="#agenda"
+            class="inline-flex items-center justify-center px-6 py-4 rounded-xl3 bg-nb_primary text-nb_bg font-semibold text-base shadow-cta hover:bg-nb_primary_hover transition">
+            Agenda tu Diagnóstico Gratis
+          </a>
+          <a
+            href="https://wa.me/56966683980?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20de%20la%20automatizaci%C3%B3n%20para%20mi%20pyme"
+            class="inline-flex items-center justify-center px-6 py-4 rounded-xl3 border border-nb_primary text-nb_primary font-medium text-base hover:bg-nb_primary/10 transition"
+          >
+            Hablar por WhatsApp
+          </a>
+          <p class="text-xs text-nb_text_dim w-full">
+            30 min por videollamada. Sin compromiso.
+          </p>
         </div>
-        <nav class="nb-nav">
-          <a href="#servicios">Servicios</a>
-          <a href="#como-funciona">Cómo funciona</a>
-          <a href="#demo">Demo</a>
-          <a href="#contacto">Contacto</a>
-        </nav>
-        <button class="nb-nav-toggle" id="nb-nav-toggle">☰</button>
       </div>
-    </header>
 
-    <main>
-      <section class="nb-hero">
-        <div class="nb-container nb-hero-grid">
-          <div class="nb-hero-text">
-            <h1>
-              IA aplicada al negocio<br />
-              para pymes reales.
-            </h1>
-            <p>
-              NeuraBiz te ayuda a automatizar tu back-office, entender tus
-              números y convertir más clientes con chatbots y dashboards
-              inteligentes.
+      <!-- Tarjeta confiabilidad -->
+      <div class="flex-1 max-w-md mt-16 lg:mt-0">
+        <div class="bg-nb_card/60 backdrop-blur-md border border-nb_border rounded-xl3 shadow-card p-6 flex flex-col gap-5">
+          <div>
+            <p class="text-sm font-medium text-nb_primary mb-1">
+              NeuraBiz · IA aplicada a tu operación
             </p>
+            <p class="text-base text-nb_text_primary font-semibold">
+              “Queremos que tu equipo facture, no que pierda tiempo copiando datos.”
+            </p>
+          </div>
 
-            <div class="nb-hero-actions">
-              <a href="#demo" class="nb-btn nb-btn-primary">Agenda una reunión</a>
-              <a href="#servicios" class="nb-btn nb-btn-secondary">Ver soluciones</a>
+          <div class="text-xs text-nb_text_dim leading-relaxed">
+            Implementamos:
+            <ul class="list-disc list-inside space-y-1 mt-2">
+              <li>Chatbots entrenados en tu negocio</li>
+              <li>Tableros de caja y margen diario</li>
+              <li>Seguimiento post-venta automático</li>
+              <li>Recordatorios de cobro</li>
+            </ul>
+          </div>
+
+          <div class="text-[11px] text-nb_text_dim/80 border-t border-nb_border pt-4 leading-relaxed">
+            Esto no es “te vendo IA mágica”. Es <span class="text-nb_text_primary/90 font-medium">orden operativo y más ventas</span> con lo que ya usas hoy
+            (WhatsApp, planillas, etc.).
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Sección: Dolor -> Solución -->
+  <section class="bg-nb_card/20 border-t border-b border-nb_border py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-nb_text_primary text-center">
+        Si estás viviendo esto, somos para ti:
+      </h2>
+
+      <div class="mt-12 grid gap-6 md:grid-cols-3">
+        <div class="bg-nb_card/40 border border-nb_border rounded-xl3 p-6 shadow-card flex flex-col">
+          <div class="text-nb_primary font-semibold text-sm mb-2">VENTAS</div>
+          <h3 class="text-lg font-semibold text-nb_text_primary mb-3">
+            Te escriben por Instagram, WhatsApp y web... y algunas cotizaciones se pierden.
+          </h3>
+          <p class="text-sm text-nb_text_dim leading-relaxed">
+            Te dejamos un chatbot entrenado con tu negocio que responde, precalifica, agenda y hace seguimiento 24/7.
+          </p>
+        </div>
+
+        <div class="bg-nb_card/40 border border-nb_border rounded-xl3 p-6 shadow-card flex flex-col">
+          <div class="text-nb_primary font-semibold text-sm mb-2">FINANZAS</div>
+          <h3 class="text-lg font-semibold text-nb_text_primary mb-3">
+            No tienes claro cuánto estás ganando realmente cada semana.
+          </h3>
+          <p class="text-sm text-nb_text_dim leading-relaxed">
+            Tablero financiero diario con ventas, gastos y caja. Sin fórmulas raras ni macros tuyas.
+          </p>
+        </div>
+
+        <div class="bg-nb_card/40 border border-nb_border rounded-xl3 p-6 shadow-card flex flex-col">
+          <div class="text-nb_primary font-semibold text-sm mb-2">OPERACIÓN</div>
+          <h3 class="text-lg font-semibold text-nb_text_primary mb-3">
+            Estás pagando gente para tareas repetitivas que no generan plata.
+          </h3>
+          <p class="text-sm text-nb_text_dim leading-relaxed">
+            Automatizamos seguimiento postventa, recordatorios de cobro y cargas administrativas.
+            Tu equipo se dedica a facturar, no copiar datos.
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="#agenda"
+          class="inline-flex items-center justify-center px-6 py-4 rounded-xl3 bg-nb_primary text-nb_bg font-semibold text-base shadow-cta hover:bg-nb_primary_hover transition">
+          Quiero ver cómo se vería en mi negocio
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección: Método -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-semibold text-nb_text_primary">
+          Implementación simple, sin dolor
+        </h2>
+        <p class="text-nb_text_dim text-base leading-relaxed mt-4 max-w-lg">
+          Nada de proyectos eternos estilo SAP. Valor en días, no meses.
+        </p>
+
+        <div class="mt-10 space-y-8">
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-xl3 bg-nb_card border border-nb_border flex items-center justify-center text-nb_primary font-semibold">1</div>
+            <div>
+              <div class="text-nb_text_primary font-semibold">Diagnóstico (30 min)</div>
+              <div class="text-nb_text_dim text-sm leading-relaxed">
+                Miramos tu operación comercial y tu flujo de caja. Gratis.
+              </div>
             </div>
           </div>
 
-          <div class="nb-hero-card">
-            <h2>Servicios principales</h2>
-            <ul>
-              <li>Chatbots para capturar leads</li>
-              <li>Panel Financiero PRO</li>
-              <li>Score PyME</li>
-              <li>Automatización del back-office</li>
-            </ul>
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-xl3 bg-nb_card border border-nb_border flex items-center justify-center text-nb_primary font-semibold">2</div>
+            <div>
+              <div class="text-nb_text_primary font-semibold">Setup inicial (7 días típicos)</div>
+              <div class="text-nb_text_dim text-sm leading-relaxed">
+                Dejamos funcionando tu primer módulo (chatbot o tablero financiero). Cero código de tu lado.
+              </div>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-xl3 bg-nb_card border border-nb_border flex items-center justify-center text-nb_primary font-semibold">3</div>
+            <div>
+              <div class="text-nb_text_primary font-semibold">Acompañamiento</div>
+              <div class="text-nb_text_dim text-sm leading-relaxed">
+                Ajustamos mensajes, alertas y reportes diarios el primer mes.
+              </div>
+            </div>
           </div>
         </div>
-      </section>
 
-      <section id="servicios" class="nb-section">
-        <div class="nb-container">
-          <h2>Soluciones NeuraBiz para tu pyme</h2>
-          <div class="nb-grid-3">
-            <article class="nb-card">
-              <h3>Chatbots</h3>
-              <p>Asistentes que capturan datos y convierten mejor.</p>
-            </article>
-            <article class="nb-card">
-              <h3>Panel Financiero PRO</h3>
-              <p>KPI claros, IVA, flujo y Score PyME.</p>
-            </article>
-            <article class="nb-card">
-              <h3>Automatización</h3>
-              <p>Menos Excel, más control real del negocio.</p>
-            </article>
-          </div>
+        <div class="mt-10">
+          <a href="#agenda"
+            class="inline-flex items-center justify-center px-6 py-4 rounded-xl3 bg-nb_primary text-nb_bg font-semibold text-base shadow-cta hover:bg-nb_primary_hover transition">
+            Agenda tu Diagnóstico Gratis
+          </a>
         </div>
-      </section>
-
-      <section id="como-funciona" class="nb-section nb-section-alt">
-        <div class="nb-container">
-          <h2>Cómo trabajamos</h2>
-          <div class="nb-steps">
-            <div class="nb-step"><span>1</span><h3>Diagnóstico</h3></div>
-            <div class="nb-step"><span>2</span><h3>Propuesta</h3></div>
-            <div class="nb-step"><span>3</span><h3>Implementación</h3></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="demo" class="nb-section">
-        <div class="nb-container">
-          <h2>Agenda una conversación</h2>
-          <p>Integraremos Calendly aquí.</p>
-
-          <div class="nb-calendly-wrapper">
-            <p>Cuando tenga el snippet, lo pego aquí.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="contacto" class="nb-section nb-section-alt">
-        <div class="nb-container nb-contact-grid">
-          <div>
-            <h2>Contacto</h2>
-            <p>Hablemos de tu pyme.</p>
-          </div>
-          <div class="nb-contact-card">
-            <p><strong>Correo:</strong> pablo.bombardiere@gmail.com</p>
-            <p><strong>Ciudad:</strong> Santiago, Chile</p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="nb-footer">
-      <div class="nb-container nb-footer-inner">
-        <span>© <span id="nb-year"></span> NeuraBiz SPA.</span>
       </div>
-    </footer>
 
-    <script src="assets/js/main.js"></script>
-  </body>
+      <!-- Casos / prueba social -->
+      <div class="bg-nb_card/40 border border-nb_border rounded-xl3 shadow-card p-6 flex flex-col gap-6">
+        <div>
+          <div class="text-sm font-medium text-nb_primary tracking-wide uppercase">Casos reales</div>
+          <h3 class="text-xl font-semibold text-nb_text_primary mt-2">
+            Lo que estamos viendo en pymes como la tuya
+          </h3>
+        </div>
+
+        <div class="space-y-6 text-sm leading-relaxed">
+          <div>
+            <div class="text-nb_text_primary font-semibold">Taller Automotriz</div>
+            <div class="text-nb_text_dim">
+              Chatbot entrenado en su catálogo respondió cotizaciones fuera de horario.
+              Más clientes atendidos sin contratar recepcionista nocturno.
+            </div>
+          </div>
+
+          <div>
+            <div class="text-nb_text_primary font-semibold">Servicios Técnicos</div>
+            <div class="text-nb_text_dim">
+              Tablero de caja diario. El dueño sabe margen y liquidez cada mañana sin pedir planillas.
+            </div>
+          </div>
+
+          <div>
+            <div class="text-nb_text_primary font-semibold">Ecommerce de Autopartes</div>
+            <div class="text-nb_text_dim">
+              Recordatorios automáticos de pago y retiro. Menos tiempo mandando mensajes manuales.
+            </div>
+          </div>
+        </div>
+
+        <div class="text-[11px] text-nb_text_dim/70 leading-relaxed border-t border-nb_border pt-4">
+          Hablamos tu idioma: ventas, caja, horas hombre. No buzzwords.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección: Oferta del diagnóstico -->
+  <section class="bg-nb_card/20 border-t border-b border-nb_border py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-nb_text_primary">
+        Qué incluye tu Diagnóstico Gratis de 30 min
+      </h2>
+
+      <p class="text-nb_text_dim text-base leading-relaxed mt-4 max-w-2xl mx-auto">
+        Te mostramos dónde estás perdiendo plata o tiempo hoy, y cuánto podrías recuperar automatizando.
+      </p>
+
+      <div class="mt-12 grid md:grid-cols-2 gap-6 text-left">
+        <div class="bg-nb_card/40 border border-nb_border rounded-xl3 p-6 shadow-card">
+          <div class="text-nb_primary font-semibold text-sm mb-2">ANÁLISIS OPERATIVO</div>
+          <div class="text-nb_text_primary font-semibold mb-2">Puntos ciegos de tu operación</div>
+          <div class="text-nb_text_dim text-sm leading-relaxed">
+            Dónde se pierden cotizaciones, en qué pasos se frena la venta, qué tareas son puro copiar/pegar.
+          </div>
+        </div>
+
+        <div class="bg-nb_card/40 border border-nb_border rounded-xl3 p-6 shadow-card">
+          <div class="text-nb_primary font-semibold text-sm mb-2">FINANZAS</div>
+          <div class="text-nb_text_primary font-semibold mb-2">Caja y margen sin Excel eterno</div>
+          <div class="text-nb_text_dim text-sm leading-relaxed">
+            Te mostramos cómo ver ventas, gastos y caja al día sin pedirle a contabilidad “mándame la planilla”.
+          </div>
+        </div>
+
+        <div class="bg-nb_card/40 border border-nb_border rounded-xl3 p-6 shadow-card">
+          <div class="text-nb_primary font-semibold text-sm mb-2">AUTOMATIZACIÓN</div>
+          <div class="text-nb_text_primary font-semibold mb-2">Qué podrías automatizar mañana</div>
+          <div class="text-nb_text_dim text-sm leading-relaxed">
+            Chatbot comercial, recordatorios de pago, reportes diarios en tu WhatsApp.
+          </div>
+        </div>
+
+        <div class="bg-nb_card/40 border border-nb_border rounded-xl3 p-6 shadow-card">
+          <div class="text-nb_primary font-semibold text-sm mb-2">SIGUIENTE PASO</div>
+          <div class="text-nb_text_primary font-semibold mb-2">Plan claro de 7 días</div>
+          <div class="text-nb_text_dim text-sm leading-relaxed">
+            Te decimos exactamente qué haríamos la primera semana. Si no te sirve, listo, no hay compromiso.
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12">
+        <a href="#agenda"
+          class="inline-flex items-center justify-center px-6 py-4 rounded-xl3 bg-nb_primary text-nb_bg font-semibold text-base shadow-cta hover:bg-nb_primary_hover transition">
+          Quiero mi Diagnóstico Gratis
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección: Formulario / Agenda -->
+  <section id="agenda" class="py-20 px-6">
+    <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12">
+
+      <!-- Bloque agenda -->
+      <div class="flex flex-col justify-center">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-nb_text_primary">
+          Agenda tu Diagnóstico Gratis
+        </h2>
+        <p class="text-nb_text_dim text-base leading-relaxed mt-4 max-w-md">
+          30 minutos por videollamada. Te mostramos dónde automatizar, cuánto podrías ahorrar y cuál sería tu “primer módulo rápido”.
+        </p>
+
+        <div class="mt-8 space-y-3 text-sm text-nb_text_dim">
+          <div class="flex items-start gap-3">
+            <span class="text-nb_primary text-xl leading-none">✓</span>
+            <span>Sin compromiso, sin costo.</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-nb_primary text-xl leading-none">✓</span>
+            <span>Hablamos de tu negocio real, no teoría.</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-nb_primary text-xl leading-none">✓</span>
+            <span>Sales con un plan concreto de 7 días.</span>
+          </div>
+        </div>
+
+        <!-- CTA WhatsApp alternativo -->
+        <div class="mt-10 flex flex-col gap-3">
+          <a
+            href="https://wa.me/56966683980?text=Quiero%20agendar%20el%20diagn%C3%B3stico%20gratis"
+            class="inline-flex items-center justify-center px-6 py-4 rounded-xl3 border border-nb_primary text-nb_primary font-medium text-base hover:bg-nb_primary/10 transition w-full md:w-auto text-center"
+          >
+            Prefiero hablar por WhatsApp
+          </a>
+          <p class="text-[11px] text-nb_text_dim leading-relaxed">
+            Te respondemos directo por WhatsApp si no quieres agendar todavía.
+          </p>
+        </div>
+      </div>
+
+      <!-- Formulario / Calendly embed -->
+      <div class="bg-nb_card/60 border border-nb_border rounded-xl3 shadow-card p-6 md:p-7">
+        <div class="space-y-5">
+          <div>
+            <label class="block text-sm font-medium text-nb_text_primary mb-2">Agenda directa</label>
+
+            <div class="w-full rounded-xl2 bg-nb_bg/40 border border-nb_border/80 p-2 md:p-3 shadow-inner">
+              <iframe
+                src="https://calendly.com/pablo-bombardiere/neurabiz"
+                style="width:100%; min-height:480px; border:0; background-color:transparent;"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- Campos de contacto como plan B -->
+          <div>
+            <label class="block text-sm font-medium text-nb_text_primary mb-2">Nombre</label>
+            <input
+              type="text"
+              placeholder="Ej: Carla Muñoz"
+              class="w-full rounded-xl2 bg-nb_bg/40 border border-nb_border px-4 py-3 text-sm text-nb_text_primary placeholder-nb_text_dim focus:outline-none focus:ring-2 focus:ring-nb_primary/40"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-nb_text_primary mb-2">WhatsApp</label>
+            <input
+              type="tel"
+              placeholder="+56 9 ..."
+              class="w-full rounded-xl2 bg-nb_bg/40 border border-nb_border px-4 py-3 text-sm text-nb_text_primary placeholder-nb_text_dim focus:outline-none focus:ring-2 focus:ring-nb_primary/40"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-nb_text_primary mb-2">Rubro</label>
+            <select
+              class="w-full rounded-xl2 bg-nb_bg/40 border border-nb_border px-4 py-3 text-sm text-nb_text_primary focus:outline-none focus:ring-2 focus:ring-nb_primary/40"
+            >
+              <option value="">Selecciona el que más te parezca</option>
+              <option>Taller / Servicios automotrices</option>
+              <option>Servicios técnicos / Mantenciones</option>
+              <option>Comercialización / Distribución</option>
+              <option>Ecommerce</option>
+              <option>Otro</option>
+            </select>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full rounded-xl3 bg-nb_primary text-nb_bg font-semibold text-base py-4 shadow-cta hover:bg-nb_primary_hover transition"
+          >
+            Reservar mi Diagnóstico Gratis
+          </button>
+
+          <p class="text-[11px] text-nb_text_dim leading-relaxed text-center">
+            Te confirmamos por WhatsApp al +56 9 6668 3980 y enviamos link de la videollamada.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-nb_card/10 border-t border-b border-nb_border py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-nb_text_primary text-center">
+        Preguntas rápidas
+      </h2>
+
+      <div class="mt-12 grid md:grid-cols-2 gap-8 text-sm leading-relaxed">
+        <div>
+          <div class="text-nb_text_primary font-semibold mb-2">
+            ¿Esto reemplaza gente?
+          </div>
+          <div class="text-nb_text_dim">
+            No buscamos reemplazar. Buscamos que la gente que ya tienes deje de copiar datos
+            y se concentre en venta, cobranza y servicio.
+          </div>
+        </div>
+
+        <div>
+          <div class="text-nb_text_primary font-semibold mb-2">
+            ¿Tengo que cambiar todo mi sistema?
+          </div>
+          <div class="text-nb_text_dim">
+            No. Partimos usando lo que ya tienes hoy (WhatsApp, planillas, etc.) y encima de eso
+            te montamos automatizaciones y reportes diarios.
+          </div>
+        </div>
+
+        <div>
+          <div class="text-nb_text_primary font-semibold mb-2">
+            ¿Me amarran con un contrato largo?
+          </div>
+          <div class="text-nb_text_dim">
+            No para el diagnóstico ni para el primer módulo. Si quieres soporte mensual continuo, ahí sí existe plan.
+          </div>
+        </div>
+
+        <div>
+          <div class="text-nb_text_primary font-semibold mb-2">
+            No cacho de IA, ¿esto igual es para mí?
+          </div>
+          <div class="text-nb_text_dim">
+            Sí. Tú nos cuentas cómo vendes y cómo cobras. Nosotros lo traducimos a automatización lista para operar.
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="#agenda"
+          class="inline-flex items-center justify-center px-6 py-4 rounded-xl3 bg-nb_primary text-nb_bg font-semibold text-base shadow-cta hover:bg-nb_primary_hover transition">
+          Agenda tu Diagnóstico Gratis
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="px-6 py-16">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-start md:justify-between gap-10">
+      <div class="max-w-md">
+        <div class="text-lg font-semibold text-nb_text_primary">
+          NeuraBiz · Automatización Inteligente para Pymes
+        </div>
+        <div class="text-sm text-nb_text_dim mt-4 leading-relaxed">
+          Te ayudamos a vender más y operar con menos costo usando IA real,
+          no promesas. Primera llamada gratis.
+        </div>
+      </div>
+
+      <div class="text-sm text-nb_text_dim flex flex-col gap-4">
+        <a href="#agenda" class="hover:text-nb_primary transition font-medium">
+          Agenda tu Diagnóstico Gratis
+        </a>
+        <a
+          href="https://wa.me/56966683980?text=Hola%2C%20vengo%20desde%20tu%20web"
+          class="hover:text-nb_primary transition font-medium"
+        >
+          WhatsApp directo
+        </a>
+        <div class="text-[11px] text-nb_text_dim/70 leading-relaxed">
+          © <span id="ano"></span> NeuraBiz. Todos los derechos reservados.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // año dinámico footer
+    document.getElementById("ano").textContent = new Date().getFullYear();
+  </script>
+
+  <script>
+    // Scroll suave centrado a #agenda
+    document.addEventListener("DOMContentLoaded", function () {
+      const agendaSection = document.getElementById("agenda");
+      if (!agendaSection) return;
+
+      const links = document.querySelectorAll('a[href="#agenda"]');
+      links.forEach(function (link) {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          agendaSection.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+        });
+      });
+    });
+  </script>
+
+</body>
 </html>
