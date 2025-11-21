@@ -7,6 +7,9 @@
   <title>NeuraBiz · IA aplicada para Pymes</title>
   <meta name="description" content="Menos planillas. Más ventas. IA lista para tu Pyme en 7 días. Chatbots 24/7, tableros financieros diarios y automatización operativa sin dolor." />
 
+  <!-- Google Search Console verification -->
+  <meta name="google-site-verification" content="TU_CODIGO_DE_VERIFICACION" />
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2NSSK9J6GF"></script>
   <script>
@@ -284,6 +287,7 @@
       </div>
     </div>
   </section>
+
   <!-- Sección: Método -->
   <section class="py-20 px-6">
     <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
@@ -656,6 +660,7 @@
       });
     });
   </script>
+
   <script>
     // Tracking centralizado GA4 + Meta Pixel usando data-nb-event
     window.addEventListener("DOMContentLoaded", function () {
@@ -680,13 +685,14 @@
         console.log("[NB Tracking]", eventName, label || "");
       }
 
-      // Cualquier elemento con data-nb-event queda trackeado
-      document.querySelectorAll("[data-nb-event]").forEach(function (el) {
-        el.addEventListener("click", function () {
-          var name = el.getAttribute("data-nb-event") || "cta_click";
-          var label = el.getAttribute("data-nb-label") || "";
-          trackEvent(name, label);
-        });
+      // Listener delegado para todos los elementos con data-nb-event
+      document.addEventListener("click", function (e) {
+        var el = e.target.closest("[data-nb-event]");
+        if (!el) return;
+
+        var name = el.getAttribute("data-nb-event") || "cta_click";
+        var label = el.getAttribute("data-nb-label") || "";
+        trackEvent(name, label);
       });
     });
   </script>
