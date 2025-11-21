@@ -7,6 +7,43 @@
   <title>NeuraBiz · IA aplicada para Pymes</title>
   <meta name="description" content="Menos planillas. Más ventas. IA lista para tu Pyme en 7 días. Chatbots 24/7, tableros financieros diarios y automatización operativa sin dolor." />
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2NSSK9J6GF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2NSSK9J6GF');
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "u9btzoxmds");
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src='https://connect.facebook.net/en_US/fbevents.js';
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script');
+    fbq('init', '1524315308778269'); 
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1524315308778269&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -59,30 +96,40 @@
       <span class="text-nb_primary">Neura</span>Biz
     </div>
     <nav class="hidden md:flex items-center gap-6 text-sm">
-      <a href="#agenda" class="hover:text-nb_primary transition">
+      <a href="#agenda" class="hover:text-nb_primary transition"
+         data-nb-event="cta_click"
+         data-nb-label="nav_agenda">
         Agenda tu Diagnóstico Gratis.
       </a>
       <a
         href="https://wa.me/56966683980?text=Hola%2C%20vengo%20desde%20tu%20web"
         class="hover:text-nb_primary transition"
+        data-nb-event="whatsapp_click"
+        data-nb-label="nav_whatsapp"
       >
         WhatsApp directo.
       </a>
     </nav>
     <a href="#agenda"
-       class="hidden md:inline-flex items-center px-4 py-2 rounded-xl2 bg-nb_primary text-nb_bg text-sm font-semibold shadow-cta hover:bg-nb_primary_hover transition">
+       class="hidden md:inline-flex items-center px-4 py-2 rounded-xl2 bg-nb_primary text-nb_bg text-sm font-semibold shadow-cta hover:bg-nb_primary_hover transition"
+       data-nb-event="cta_click"
+       data-nb-label="header_agenda">
       Agenda ahora.
     </a>
   </header>
 
   <!-- Barra fija en mobile con CTA -->
   <div class="fixed bottom-0 left-0 right-0 z-40 bg-nb_card/90 backdrop-blur-sm border-t border-nb_border p-4 flex flex-col gap-2 md:hidden">
-    <a href="#agenda" class="w-full text-center py-3 rounded-xl3 font-semibold text-nb_bg bg-nb_primary shadow-cta hover:bg-nb_primary_hover transition">
+    <a href="#agenda" class="w-full text-center py-3 rounded-xl3 font-semibold text-nb_bg bg-nb_primary shadow-cta hover:bg-nb_primary_hover transition"
+       data-nb-event="cta_click"
+       data-nb-label="mobile_agenda">
       Agenda tu Diagnóstico Gratis.
     </a>
     <a
       href="https://wa.me/56966683980?text=Quiero%20saber%20c%C3%B3mo%20la%20IA%20puede%20ayudar%20mi%20Pyme"
       class="w-full text-center py-3 rounded-xl3 font-medium border border-nb_primary text-nb_primary hover:bg-nb_primary/10 transition"
+      data-nb-event="whatsapp_click"
+      data-nb-label="mobile_whatsapp"
     >
       Hablar por WhatsApp.
     </a>
@@ -135,12 +182,16 @@
         <!-- CTAs desktop -->
         <div class="hidden md:flex flex-wrap items-center gap-4 mt-10">
           <a href="#agenda"
-            class="inline-flex items-center justify-center px-6 py-4 rounded-xl3 bg-nb_primary text-nb_bg font-semibold text-base shadow-cta hover:bg-nb_primary_hover transition">
+            class="inline-flex items-center justify-center px-6 py-4 rounded-xl3 bg-nb_primary text-nb_bg font-semibold text-base shadow-cta hover:bg-nb_primary_hover transition"
+            data-nb-event="cta_click"
+            data-nb-label="hero_agenda">
             Agenda tu Diagnóstico Gratis.
           </a>
           <a
             href="https://wa.me/56966683980?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20de%20la%20automatizaci%C3%B3n%20para%20mi%20Pyme"
             class="inline-flex items-center justify-center px-6 py-4 rounded-xl3 border border-nb_primary text-nb_primary font-medium text-base hover:bg-nb_primary/10 transition"
+            data-nb-event="whatsapp_click"
+            data-nb-label="hero_whatsapp"
           >
             Hablar por WhatsApp.
           </a>
@@ -225,7 +276,9 @@
 
       <div class="text-center mt-12">
         <a href="#agenda"
-          class="inline-flex items-center justify-center px-6 py-4 rounded-xl3 bg-nb_primary text-nb_bg font-semibold text-base shadow-cta hover:bg-nb_primary_hover transition">
+          class="inline-flex items-center justify-center px-6 py-4 rounded-xl3 bg-nb_primary text-nb_bg font-semibold text-base shadow-cta hover:bg-nb_primary_hover transition"
+          data-nb-event="cta_click"
+          data-nb-label="midpage_agenda">
           Quiero ver cómo se vería en mi negocio.
         </a>
       </div>
@@ -276,7 +329,9 @@
 
         <div class="mt-10">
           <a href="#agenda"
-            class="inline-flex items-center justify-center px-6 py-4 rounded-xl3 bg-nb_primary text-nb_bg font-semibold text-base shadow-cta hover:bg-nb_primary_hover transition">
+            class="inline-flex items-center justify-center px-6 py-4 rounded-xl3 bg-nb_primary text-nb_bg font-semibold text-base shadow-cta hover:bg-nb_primary_hover transition"
+            data-nb-event="cta_click"
+            data-nb-label="method_agenda">
             Agenda tu Diagnóstico Gratis.
           </a>
         </div>
@@ -369,7 +424,9 @@
 
       <div class="mt-12">
         <a href="#agenda"
-          class="inline-flex items-center justify-center px-6 py-4 rounded-xl3 bg-nb_primary text-nb_bg font-semibold text-base shadow-cta hover:bg-nb_primary_hover transition">
+          class="inline-flex items-center justify-center px-6 py-4 rounded-xl3 bg-nb_primary text-nb_bg font-semibold text-base shadow-cta hover:bg-nb_primary_hover transition"
+          data-nb-event="cta_click"
+          data-nb-label="offer_agenda">
           Quiero mi Diagnóstico Gratis.
         </a>
       </div>
@@ -409,6 +466,8 @@
           <a
             href="https://wa.me/56966683980?text=Quiero%20agendar%20 el%20diagn%C3%B3stico%20gratis"
             class="inline-flex items-center justify-center px-6 py-4 rounded-xl3 border border-nb_primary text-nb_primary font-medium text-base hover:bg-nb_primary/10 transition w-full md:w-auto text-center"
+            data-nb-event="whatsapp_click"
+            data-nb-label="agenda_whatsapp"
           >
             Prefiero hablar por WhatsApp.
           </a>
@@ -469,12 +528,13 @@
           <button
             type="submit"
             class="w-full rounded-xl3 bg-nb_primary text-nb_bg font-semibold text-base py-4 shadow-cta hover:bg-nb_primary_hover transition"
-          >
+            data-nb-event="lead"
+            data-nb-label="form_reservar_diagnostico">
             Reservar mi Diagnóstico Gratis.
           </button>
 
           <p class="text-[11px] text-nb_text_dim leading-relaxed text-center">
-            Te confirmamos por WhatsApp al +56 9 6668 3980 y enviamos link de la videollamada.
+            Te confirmamos por WhatsApp a tu numero registrado y enviamos link de la videollamada.
           </p>
         </div>
       </div>
@@ -530,7 +590,9 @@
 
       <div class="text-center mt-12">
         <a href="#agenda"
-          class="inline-flex items-center justify-center px-6 py-4 rounded-xl3 bg-nb_primary text-nb_bg font-semibold text-base shadow-cta hover:bg-nb_primary_hover transition">
+          class="inline-flex items-center justify-center px-6 py-4 rounded-xl3 bg-nb_primary text-nb_bg font-semibold text-base shadow-cta hover:bg-nb_primary_hover transition"
+          data-nb-event="cta_click"
+          data-nb-label="faq_agenda">
           Agenda tu Diagnóstico Gratis.
         </a>
       </div>
@@ -551,12 +613,16 @@
       </div>
 
       <div class="text-sm text-nb_text_dim flex flex-col gap-4">
-        <a href="#agenda" class="hover:text-nb_primary transition font-medium">
+        <a href="#agenda" class="hover:text-nb_primary transition font-medium"
+           data-nb-event="cta_click"
+           data-nb-label="footer_agenda">
           Agenda tu Diagnóstico Gratis.
         </a>
         <a
           href="https://wa.me/56966683980?text=Hola%2C%20vengo%20desde%20tu%20web"
           class="hover:text-nb_primary transition font-medium"
+          data-nb-event="whatsapp_click"
+          data-nb-label="footer_whatsapp"
         >
           WhatsApp directo.
         </a>
@@ -590,6 +656,39 @@
       });
     });
   </script>
+  <script>
+    // Tracking centralizado GA4 + Meta Pixel usando data-nb-event
+    window.addEventListener("DOMContentLoaded", function () {
+      function trackEvent(eventName, label) {
+        // GA4
+        if (typeof gtag === "function") {
+          gtag("event", eventName, {
+            event_category: "neurabiz_web",
+            event_label: label || window.location.pathname,
+          });
+        }
 
+        // Meta Pixel
+        if (typeof fbq === "function") {
+          if (eventName === "lead") {
+            fbq("track", "Lead");
+          } else {
+            fbq("trackCustom", eventName);
+          }
+        }
+
+        console.log("[NB Tracking]", eventName, label || "");
+      }
+
+      // Cualquier elemento con data-nb-event queda trackeado
+      document.querySelectorAll("[data-nb-event]").forEach(function (el) {
+        el.addEventListener("click", function () {
+          var name = el.getAttribute("data-nb-event") || "cta_click";
+          var label = el.getAttribute("data-nb-label") || "";
+          trackEvent(name, label);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
